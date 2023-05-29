@@ -373,9 +373,11 @@ template {
 
 .header {
   background-color: #FFD700;
-  height: 100px;
-  display: flex;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100vw;
+  z-index: 1000;
 }
 
 .header__container {
@@ -443,8 +445,8 @@ template {
     flex-direction: column;
     position: absolute;
     top: 70px;
-    left: 7%;
-    width: 86%;
+    left: 0;
+    width: 100%;
   }
   .header__burger .burger-menu__list.active {
     display: flex;
@@ -469,7 +471,7 @@ template {
 }
 @media (max-width: 400px) {
   .header__burger .burger__checkbox {
-    right: 20px;
+    right: 15px;
   }
 }
 .header__burger .burger__icon {
@@ -498,6 +500,10 @@ template {
   .header__burger .burger__icon {
     right: 30px;
   }
+}
+
+.main {
+  margin-top: 70px;
 }
 
 .main__swiper {
@@ -543,9 +549,8 @@ template {
   .slide__text {
     font-size: 0.7em;
     padding: 0.521vw 1.042vw;
-    left: 2%;
-    right: 2%;
-    bottom: -20px;
+    right: 6%;
+    bottom: -30px;
   }
 }
 
@@ -585,8 +590,9 @@ template {
   width: 140px;
   height: 90px;
   border-radius: 10px;
-  opacity: 0.3;
   cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
 }
 .swiper-pagination-img.active {
   opacity: 1;
@@ -647,6 +653,7 @@ template {
   border: 3px dashed #FFD700;
   border-radius: 10px;
   background: linear-gradient(225deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 254, 231, 0.7) 100%);
+  box-shadow: 3px 3px 8px rgb(0, 0, 0);
 }
 
 .info__img {
@@ -670,6 +677,7 @@ template {
   border: 3px dashed #FFD700;
   border-radius: 10px;
   background: linear-gradient(225deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 254, 231, 0.7) 100%);
+  box-shadow: 3px 3px 8px rgb(0, 0, 0);
 }
 
 .assortment__title {
@@ -761,7 +769,12 @@ template {
 
 .data__mail,
 .data__tel {
-  color: black;
+  color: #FFD700;
+  transition: color 0.2s ease-in-out;
+}
+.data__mail:hover,
+.data__tel:hover {
+  color: rgb(0, 68, 255);
 }
 
 .data__block-social {
@@ -775,6 +788,7 @@ template {
   font-size: 2em;
   color: #FFD700;
   cursor: pointer;
+  transition: color 0.2s ease-in-out;
 }
 .fa-brands:hover {
   color: rgb(0, 68, 255);
