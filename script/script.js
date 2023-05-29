@@ -12,33 +12,62 @@ checkbox.addEventListener('click', function () {
 });
 
 let bullets = document.querySelectorAll('.swiper-pagination-img');
-const mySwiper = new Swiper(
-   '.swiper-container', {
-   direction: 'horizontal',
-   initialSlide: 0,
-   loop: true,
-   grabCursor: true,
-   autoplay: {
-      delay: 3500,
-   },
+const width = document.body.clientWidth;
 
-   pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      type: 'custom',
-      bulletClass: 'swiper-pagination-img',
-      renderCustom: function (_mySwiper, current, total) {
-         for (let i = 1; i <= total; i++) {
-            if (i == current) {
-               bullets[i - 1].classList.add('active')
-            }
-            else {
-               bullets[i - 1].classList.remove('active')
+document.querySelectorAll('.swiper').forEach(n => {
+   console.log(n)
+   const mySwiper = new Swiper(n.querySelector('.swiper-container'), {
+      direction: 'horizontal',
+      initialSlide: 0,
+      loop: true,
+      grabCursor: true,
+      autoplay: {
+         delay: 3500,
+      },
+
+      pagination: {
+         el: '.swiper-pagination',
+         clickable: true,
+         type: 'custom',
+         bulletClass: 'swiper-pagination-img',
+         renderCustom: function (_mySwiper, current, total) {
+            for (let i = 1; i <= total; i++) {
+               if (i == current) {
+                  bullets[i - 1].classList.add('active')
+               }
+               else {
+                  bullets[i - 1].classList.remove('active')
+               }
             }
          }
       }
-   }
+   });
+   const mySwiper2 = new Swiper(n.querySelector('.swiper-container-velo'), {
+      direction: 'horizontal',
+      initialSlide: 0,
+      slidesPerView: 4,
+      grabCursor: true,
+      autoplay: {
+         delay: 3500,
+      },
+      breakpoints: {
+         300: {
+            slidesPerView: 1,
+         },
+         600: {
+            slidesPerView: 2,
+         },
+         900: {
+            slidesPerView: 3,
+         },
+         1200: {
+            slidesPerView: 4,
+         },
+      }
+   });
 });
+
+console.log(window.innerWidth)
 
 //=============прокрутка при клике===========
 
@@ -72,3 +101,4 @@ if (menuLinks.length > 0) {
 };
 
 
+let veloArray = ['Велогибрид Eltreco Good 350W LITIUM', 'Велогибрид Eltreco Leto', 'Трехколесный электровелосипед Eltreco Porter Fat 500', 'Трехколесный электровелосипед Eltreco Porter Fat 500 UP', 'Трехколесный электровелосипед Eltreco Porter Fat 700', 'Электровелосипед Eltreco FS 900 new', 'Электровелосипед Eltreco MULTIWATT NEW 1000w', 'Электровелосипед Eltreco Ultra LITE', 'Электровелосипед Eltreco Ultra MAX', 'Электровелосипед Eltreco Ultra MAX PRO', 'Электровелосипед Eltreco Ultra Trend', 'Электровелосипед Eltreco Ultra Trend Up', 'Электровелосипед Eltreco Walter', 'Электровелосипед Eltreco White', 'Электровелосипед Eltreco XT 600', 'Электровелосипед Eltreco XT 600 D', 'Электровелосипед Eltreco XT 600 Limited edition', 'Электровелосипед Eltreco XT 750', 'Электровелосипед Eltreco XT 800 new', 'Электровелосипед Eltreco XT 850 new'];

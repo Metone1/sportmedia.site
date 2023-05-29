@@ -624,9 +624,28 @@ template {
   height: 256px;
 }
 
-.product__item {
+#product__swiper-velo {
+  padding: 0 30px;
+}
+
+.swiper-container-velo {
+  overflow: hidden;
+  width: 102%;
+}
+@media (max-width: 1200px) {
+  .swiper-container-velo {
+    width: 77%;
+    min-width: 855px;
+  }
+}
+#swiper__velo {
+  opacity: 1;
+}
+#swiper__velo img {
   width: 256px;
+  min-width: 256px;
   height: 320px;
+  min-height: 320px;
   border: 3px solid #FFD700;
 }
 
@@ -769,10 +788,11 @@ template {
 
 .data__mail,
 .data__tel {
-  color: #FFD700;
+  color: #444;
   transition: color 0.2s ease-in-out;
   font-size: 1.2em;
-  text-shadow: 1px 2px 0px rgb(0, 0, 0);
+  font-weight: 700;
+  text-shadow: 0px 1px 4px #FFD700;
 }
 .data__mail:hover,
 .data__tel:hover {
