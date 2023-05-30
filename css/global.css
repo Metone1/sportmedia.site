@@ -610,43 +610,63 @@ template {
   }
 }
 
-.product__list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+.product__subtitle {
+  font-size: 1em;
+  color: #444;
   text-align: center;
-  padding: 0 15px 15px 15px;
-  gap: 20px;
-}
-.product__list img {
-  width: 250px;
-  height: 256px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
 }
 
 #product__swiper-velo {
-  padding: 0 30px;
+  padding: 0 20px 30px 20px;
 }
 
 .swiper-container-velo {
   overflow: hidden;
-  width: 102%;
+  width: 100%;
 }
 @media (max-width: 1200px) {
   .swiper-container-velo {
-    width: 77%;
-    min-width: 855px;
+    width: 860px;
+    margin: 0 auto;
   }
 }
+@media (max-width: 900px) {
+  .swiper-container-velo {
+    width: 570px;
+  }
+}
+@media (max-width: 640px) {
+  .swiper-container-velo {
+    width: 410px;
+  }
+}
+@media (max-width: 450px) {
+  .swiper-container-velo {
+    width: 255px;
+  }
+}
+
 #swiper__velo {
   opacity: 1;
 }
 #swiper__velo img {
-  width: 256px;
-  min-width: 256px;
-  height: 320px;
-  min-height: 320px;
+  width: 280px;
+  height: 280px;
   border: 3px solid #FFD700;
+  border-radius: 10px;
+}
+@media (max-width: 640px) {
+  #swiper__velo img {
+    width: 200px;
+    height: 250px;
+  }
+}
+@media (max-width: 450px) {
+  #swiper__velo img {
+    width: 250px;
+  }
 }
 
 .product__item-subtitle {
@@ -805,27 +825,34 @@ template {
   align-items: center;
 }
 
-.fa-brands {
-  padding-left: 20px;
-  font-size: 2em;
-  color: #FFD700;
-  cursor: pointer;
-  transition: color 0.2s ease-in-out;
-}
-.fa-brands:hover {
-  color: rgb(0, 68, 255);
-}
-
 .footer {
   width: 100%;
   background-color: #FFD700;
   margin-top: 80px;
 }
 
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
 .footer__text {
-  padding: 25px 0 25px 20px;
+  padding: 25px 0;
   color: white;
   font-size: 0.8em;
+}
+
+.fa-brands {
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.fa-brands:hover {
+  color: rgb(0, 4, 255);
 }
 
 body {

@@ -51,8 +51,11 @@ document.querySelectorAll('.swiper').forEach(n => {
          delay: 3500,
       },
       breakpoints: {
-         300: {
+         320: {
             slidesPerView: 1,
+         },
+         450: {
+            slidesPerView: 2,
          },
          600: {
             slidesPerView: 2,
