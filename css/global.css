@@ -616,9 +616,10 @@ template {
   text-align: center;
   padding-bottom: 20px;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
-#product__swiper-velo {
+#product__swiper {
   padding: 0 20px 30px 20px;
   position: relative;
 }
@@ -650,24 +651,27 @@ template {
   }
 }
 
-#swiper__velo {
+#swiper__slide {
   opacity: 1;
-}
-#swiper__velo img {
-  width: 280px;
-  height: 280px;
   border: 3px solid #FFD700;
+  border-radius: 10px;
+  width: 280px;
+  min-height: 400px;
+}
+#swiper__slide img {
+  width: 265px;
+  height: 290px;
   border-radius: 10px;
 }
 @media (max-width: 640px) {
-  #swiper__velo img {
-    width: 200px;
-    height: 250px;
+  #swiper__slide img {
+    width: 190px;
+    height: 260px;
   }
 }
 @media (max-width: 450px) {
-  #swiper__velo img {
-    width: 250px;
+  #swiper__slide img {
+    width: 247px;
   }
 }
 
@@ -698,6 +702,15 @@ template {
 
 .slider__next {
   right: 2px;
+}
+
+.bike__discription {
+  text-align: center;
+  font-size: 1em;
+  color: #444;
+  font-weight: 500;
+  padding: 10px;
+  border-top: 2px dashed #444;
 }
 
 .information__list {
