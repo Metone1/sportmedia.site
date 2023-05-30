@@ -620,30 +620,32 @@ template {
 
 #product__swiper-velo {
   padding: 0 20px 30px 20px;
+  position: relative;
 }
 
-.swiper-container-velo {
+.swiper__container-products {
+  position: relative;
   overflow: hidden;
   width: 100%;
 }
 @media (max-width: 1200px) {
-  .swiper-container-velo {
+  .swiper__container-products {
     width: 860px;
     margin: 0 auto;
   }
 }
 @media (max-width: 900px) {
-  .swiper-container-velo {
+  .swiper__container-products {
     width: 570px;
   }
 }
 @media (max-width: 640px) {
-  .swiper-container-velo {
+  .swiper__container-products {
     width: 410px;
   }
 }
 @media (max-width: 450px) {
-  .swiper-container-velo {
+  .swiper__container-products {
     width: 255px;
   }
 }
@@ -672,6 +674,30 @@ template {
 .product__item-subtitle {
   font-size: 1em;
   font-weight: 600;
+}
+
+.slider__prev,
+.slider__next {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 25px);
+  z-index: 100;
+}
+.slider__prev img,
+.slider__next img {
+  width: 100%;
+  height: 100%;
+}
+
+.slider__prev {
+  transform: rotate(180deg);
+  left: 3px;
+}
+
+.slider__next {
+  right: 8px;
 }
 
 .information__list {

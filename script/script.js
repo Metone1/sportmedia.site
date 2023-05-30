@@ -15,7 +15,6 @@ let bullets = document.querySelectorAll('.swiper-pagination-img');
 const width = document.body.clientWidth;
 
 document.querySelectorAll('.swiper').forEach(n => {
-   console.log(n)
    const mySwiper = new Swiper(n.querySelector('.swiper-container'), {
       direction: 'horizontal',
       initialSlide: 0,
@@ -50,6 +49,70 @@ document.querySelectorAll('.swiper').forEach(n => {
       autoplay: {
          delay: 3500,
       },
+      navigation: {
+         nextEl: '.slider-velo__next',
+         prevEl: '.slider-velo__prev'
+      },
+      breakpoints: {
+         320: {
+            slidesPerView: 1,
+         },
+         450: {
+            slidesPerView: 2,
+         },
+         600: {
+            slidesPerView: 2,
+         },
+         900: {
+            slidesPerView: 3,
+         },
+         1200: {
+            slidesPerView: 4,
+         },
+      }
+   });
+   const mySwiper3 = new Swiper(n.querySelector('.swiper-container-scooter'), {
+      direction: 'horizontal',
+      initialSlide: 0,
+      slidesPerView: 4,
+      grabCursor: true,
+      autoplay: {
+         delay: 3500,
+      },
+      navigation: {
+         nextEl: '.slider-scooter__next',
+         prevEl: '.slider-scooter__prev'
+      },
+      breakpoints: {
+         320: {
+            slidesPerView: 1,
+         },
+         450: {
+            slidesPerView: 2,
+         },
+         600: {
+            slidesPerView: 2,
+         },
+         900: {
+            slidesPerView: 3,
+         },
+         1200: {
+            slidesPerView: 4,
+         },
+      }
+   });
+   const mySwiper4 = new Swiper(n.querySelector('.swiper-container-scooter2'), {
+      direction: 'horizontal',
+      initialSlide: 0,
+      slidesPerView: 4,
+      grabCursor: true,
+      autoplay: {
+         delay: 3500,
+      },
+      navigation: {
+         nextEl: '.slider-scooter2__next',
+         prevEl: '.slider-scooter2__prev'
+      },
       breakpoints: {
          320: {
             slidesPerView: 1,
@@ -69,8 +132,6 @@ document.querySelectorAll('.swiper').forEach(n => {
       }
    });
 });
-
-console.log(window.innerWidth)
 
 //=============прокрутка при клике===========
 
