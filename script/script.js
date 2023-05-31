@@ -5,9 +5,9 @@ let arrayBikeLinks = ['http://catalog.sportmedia.by/index.php?route=product/prod
 
 //bike 
 for (let i = 0; i < arrayBikeLinks.length; i++) {
-   let bikeLink = document.querySelectorAll('.bike__link');
-   bikeLink[i].setAttribute('href', `${arrayBikeLinks[i]}`);
-   bikeLink[i].setAttribute('target', '_blank');
+   let bike = document.querySelectorAll('.slide__bike')
+   bike[i].setAttribute('href', `${arrayBikeLinks[i]}`);
+   bike[i].setAttribute('target', '_blank');
 
    let bikeImg = document.createElement('img');
    bikeImg.src = `./images/product/product${i + 1}.jpg`;
@@ -16,8 +16,8 @@ for (let i = 0; i < arrayBikeLinks.length; i++) {
    bikeDiscription.textContent = `${arrayBike[i]}`;
    bikeDiscription.className = 'bike__discription';
 
-   bikeLink[i].appendChild(bikeImg);
-   bikeLink[i].appendChild(bikeDiscription);
+   bike[i].appendChild(bikeImg);
+   bike[i].appendChild(bikeDiscription);
 }
 
 
@@ -226,6 +226,10 @@ document.querySelectorAll('.swiper').forEach(n => {
          },
       }
    });
+   const mySwiperInformation = new Swiper(n.querySelector('.swiper-container-information'), {
+      effect: "cards",
+      grabCursor: true,
+   })
 });
 
 //=============прокрутка при клике===========
