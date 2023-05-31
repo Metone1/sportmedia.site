@@ -8,14 +8,11 @@ for (let i = 0; i < arrayBikeLinks.length; i++) {
    let bike = document.querySelectorAll('.slide__bike')
    bike[i].setAttribute('href', `${arrayBikeLinks[i]}`);
    bike[i].setAttribute('target', '_blank');
-
    let bikeImg = document.createElement('img');
    bikeImg.src = `./images/product/product${i + 1}.jpg`;
-
    let bikeDiscription = document.createElement('p');
    bikeDiscription.textContent = `${arrayBike[i]}`;
    bikeDiscription.className = 'bike__discription';
-
    bike[i].appendChild(bikeImg);
    bike[i].appendChild(bikeDiscription);
 }
@@ -227,8 +224,17 @@ document.querySelectorAll('.swiper').forEach(n => {
       }
    });
    const mySwiperInformation = new Swiper(n.querySelector('.swiper-container-information'), {
-      effect: "cards",
+      direction: 'vertical',
+      initialSlide: 0,
       grabCursor: true,
+      spaceBetween: 10,
+      autoplay: {
+         delay: 4000,
+      },
+      pagination: {
+         el: '.swiper-pagination-info',
+         clickable: true
+      }
    })
 });
 
