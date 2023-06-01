@@ -760,6 +760,17 @@ template {
   right: 5px;
 }
 
+.slider-other__prev,
+.slider-other__next {
+  top: calc(50% + 37px);
+}
+@media (max-width: 640px) {
+  .slider-other__prev,
+  .slider-other__next {
+    top: calc(50% + 25px);
+  }
+}
+
 .fa-solid {
   font-size: 3em;
   cursor: pointer;
