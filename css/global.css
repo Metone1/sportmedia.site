@@ -666,6 +666,11 @@ template {
   text-transform: uppercase;
   font-weight: 700;
 }
+@media (max-width: 600px) {
+  .product__subtitle {
+    font-size: 1em;
+  }
+}
 
 #product__swiper {
   padding: 0 20px 30px 20px;
@@ -707,7 +712,7 @@ template {
   width: 280px;
   min-height: 400px;
   background: linear-gradient(225deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 254, 231, 0.7) 100%);
-  box-shadow: 2px 0px 5px rgb(0, 0, 0);
+  box-shadow: 0px 2px 13px rgb(0, 0, 0);
 }
 #swiper__slide img {
   width: 268px;
@@ -767,7 +772,7 @@ template {
   }
 }
 
-.bike__discription {
+.discription {
   text-align: center;
   font-size: 1em;
   color: #444;
@@ -980,11 +985,12 @@ template {
   height: 350px;
   border: 2px solid #FFD700;
   border-radius: 5px;
+  box-shadow: 3px 3px 14px black;
 }
 @media (max-width: 660px) {
   .contacts__map {
     min-width: 260px;
-    height: 250px;
+    height: 350px;
     width: 70%;
   }
 }
