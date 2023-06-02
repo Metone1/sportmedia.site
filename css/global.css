@@ -417,6 +417,10 @@ template {
   position: relative;
   z-index: 300;
 }
+.header__logo img {
+  width: 100%;
+  height: 100%;
+}
 
 .header__menu {
   width: 65%;
@@ -791,7 +795,7 @@ template {
   border-top: 2px dashed #444;
 }
 
-.bike__viewAll {
+.viewAll {
   width: 99%;
   background: #FFD700;
   margin: 25px auto;
@@ -802,14 +806,14 @@ template {
   font-size: 1.2em;
   transition: background 0.3s ease-in-out;
 }
-.bike__viewAll:hover {
+.viewAll:hover {
   background: #ffe23a;
   border-radius: 10px;
 }
-.bike__viewAll:hover a {
+.viewAll:hover a {
   color: #0e2cef;
 }
-.bike__viewAll a {
+.viewAll a {
   color: #444;
   width: 100%;
   height: 100%;
@@ -1000,6 +1004,8 @@ template {
   border: 2px solid #FFD700;
   border-radius: 5px;
   box-shadow: 3px 3px 14px black;
+  position: relative;
+  overflow: hidden;
 }
 @media (max-width: 660px) {
   .contacts__map {
@@ -1010,8 +1016,26 @@ template {
 }
 
 .map {
+  display: inline-block;
   width: 100%;
   height: 100%;
+}
+.map img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 570px;
+  height: 350px;
+}
+@media (max-width: 950px) {
+  .map img {
+    left: -100px;
+  }
+}
+@media (max-width: 450px) {
+  .map img {
+    left: -200px;
+  }
 }
 
 .contacts__data {
