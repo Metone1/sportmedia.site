@@ -580,7 +580,7 @@ template {
 .slide__text {
   background-color: #FFD700;
   color: #444;
-  font-size: 26px;
+  font-size: 1.5em;
   text-transform: uppercase;
   font-weight: 700;
   position: absolute;
@@ -593,13 +593,13 @@ template {
 }
 @media (max-width: 991px) {
   .slide__text {
-    font-size: 2.604vw;
+    font-size: 2.7vw;
     padding: 0.521vw 1.042vw;
   }
 }
 @media (max-width: 400px) {
   .slide__text {
-    font-size: 0.7em;
+    font-size: 0.8em;
     padding: 0.521vw 1.042vw;
     left: 10px;
     bottom: -30px;
@@ -786,7 +786,7 @@ template {
   }
 }
 
-.discription {
+.description {
   text-align: center;
   font-size: 1em;
   color: #444;
