@@ -734,6 +734,19 @@ template {
   }
 }
 
+.product__imageBlock {
+  width: 268px;
+  height: 290px;
+  background-color: #fff;
+  border-radius: 15px 8px;
+}
+.product__imageBlock.scooter__imageBlock img {
+  padding: 10px 0;
+}
+.product__imageBlock.bike__imageBlock img {
+  padding: 30px 0;
+}
+
 .product__item-subtitle {
   font-size: 1em;
   font-weight: 600;

@@ -25,6 +25,9 @@ function createProductElements(productArray, productArrayLinks, productType) {
       product.setAttribute('href', `http://catalog.sportmedia.by/index.php?route=product/product&path=${productArrayLinks[i]}`);
       product.setAttribute('target', '_blank');
 
+      const productImgBlock = document.createElement('div');
+      productImgBlock.className = `${productType}__imageBlock product__imageBlock`;
+
       const productImg = document.createElement('img');
       productImg.src = `./images/product/${productType}/product${i + 1}.jpg`;
       productImg.alt = `${productType}${i + 1}`;
@@ -33,7 +36,8 @@ function createProductElements(productArray, productArrayLinks, productType) {
       productDescription.textContent = productArray[i];
       productDescription.className = 'description';
 
-      product.appendChild(productImg);
+      productImgBlock.appendChild(productImg);
+      product.appendChild(productImgBlock);
       product.appendChild(productDescription);
    }
 }
@@ -49,13 +53,16 @@ for (let i = 0; i < bikeArray.length; i++) {
    let bike = document.querySelectorAll('.slide__bike')
    // bike[i].setAttribute('href', `http://catalog.sportmedia.by/index.php?route=product/product&path=${bikeArrayLinks[i]}`);
    // bike[i].setAttribute('target', '_blank');
+   let bikeImgBlock = document.createElement('div');
+   bikeImgBlock.className = `bike__imageBlock product__imageBlock`;
    let bikeImg = document.createElement('img');
    bikeImg.src = `./images/product/bike/product${i + 1}.webp`;
    bikeImg.alt = `bike${i + 1}`
    let bikeDescription = document.createElement('p');
    bikeDescription.textContent = `${bikeArray[i]}`;
    bikeDescription.className = 'description';
-   bike[i].appendChild(bikeImg);
+   bikeImgBlock.appendChild(bikeImg);
+   bike[i].appendChild(bikeImgBlock);
    bike[i].appendChild(bikeDescription);
 }
 
