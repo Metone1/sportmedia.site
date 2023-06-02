@@ -718,20 +718,9 @@ template {
   box-shadow: 0px 2px 13px rgb(0, 0, 0);
 }
 .swiper-slide__product img {
-  width: 268px;
-  height: 290px;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
-}
-@media (max-width: 640px) {
-  .swiper-slide__product img {
-    width: 190px;
-    height: 260px;
-  }
-}
-@media (max-width: 450px) {
-  .swiper-slide__product img {
-    width: 247px;
-  }
 }
 
 .product__imageBlock {
@@ -739,6 +728,17 @@ template {
   height: 290px;
   background-color: #fff;
   border-radius: 15px 8px;
+}
+@media (max-width: 640px) {
+  .product__imageBlock {
+    width: 190px;
+    height: 260px;
+  }
+}
+@media (max-width: 450px) {
+  .product__imageBlock {
+    width: 247px;
+  }
 }
 .product__imageBlock.scooter__imageBlock img {
   padding: 10px 0;
