@@ -581,7 +581,7 @@ template {
   font-weight: 700;
   position: absolute;
   bottom: 15%;
-  right: 15%;
+  left: 10px;
   text-align: center;
   padding: 10px 20px;
   opacity: 0;
@@ -597,7 +597,7 @@ template {
   .slide__text {
     font-size: 0.7em;
     padding: 0.521vw 1.042vw;
-    right: 6%;
+    left: 10px;
     bottom: -30px;
   }
 }
@@ -672,9 +672,8 @@ template {
   }
 }
 
-#product__swiper {
+.product__swiper {
   padding: 0 20px 30px 20px;
-  position: relative;
 }
 
 .swiper__container-products {
