@@ -16,6 +16,7 @@ let cycleArrayLinks = ['82_83&product_id=138', '82_83&product_id=136', '82_83&pr
 let otherArray = ['Детский электроквадроцикл White Siberia WS SNEG 1500W', 'Беговел Elektra', 'Беговел-трансформер Flint', 'Гироскутер Smart Balance GT AQUA 10,5', 'Гироскутер Smart Balance Premium 10,5']
 let otherArrayLinks = ['61_75&product_id=139', '80&product_id=166', '=80&product_id=167', '78_79&product_id=151', '78_79&product_id=154']
 
+//swiper-slide-creator
 function createProductElements(productArray, productArrayLinks, productType) {
    const product = document.querySelector(`#swiper-${productType}`);
 
@@ -50,6 +51,7 @@ createProductElements(cycleArray, cycleArrayLinks, 'cycle');
 createProductElements(otherArray, otherArrayLinks, 'other');
 createProductElements(bikeArray, bikeArrayLinks, 'bike');
 
+//burger
 const burgerMenu = document.querySelector('.burger-menu__list');
 const checkbox = document.querySelector('.burger__checkbox');
 checkbox.addEventListener('click', function () {
@@ -63,9 +65,44 @@ checkbox.addEventListener('click', function () {
    }
 });
 
-let bullets = document.querySelectorAll('.swiper-pagination-img');
+//swiper-inicialization
+const productSwipers = document.querySelectorAll('.product__swiper');
+for (let i = 0; i < productSwipers.length; i++) {
+   const myProductSwipers = new Swiper((`.${productSwipers[i].children[0].classList[0]}`), {
+      direction: 'horizontal',
+      initialSlide: 0,
+      slidesPerView: 4,
+      grabCursor: true,
+      spaceBetween: 10,
+      autoplay: {
+         delay: 3500,
+      },
+      navigation: {
+         nextEl: `.${productSwipers[i].children[0].children[2].classList[1]}`,
+         prevEl: `.${productSwipers[i].children[0].children[0].classList[1]}`,
+      },
+      breakpoints: {
+         320: {
+            slidesPerView: 1,
+         },
+         450: {
+            slidesPerView: 2,
+         },
+         600: {
+            slidesPerView: 2,
+         },
+         900: {
+            slidesPerView: 3,
+         },
+         1200: {
+            slidesPerView: 4,
+         },
+      }
+   });
+};
 
 document.querySelectorAll('.swiper').forEach(n => {
+   let bullets = document.querySelectorAll('.swiper-pagination-img');
    const mySwiper = new Swiper(n.querySelector('.swiper-container'), {
       direction: 'horizontal',
       initialSlide: 0,
@@ -92,192 +129,6 @@ document.querySelectorAll('.swiper').forEach(n => {
          }
       }
    });
-   const mySwiperelectroBike = new Swiper(n.querySelector('.swiper-container-electrobike'), {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 4,
-      grabCursor: true,
-      spaceBetween: 10,
-      autoplay: {
-         delay: 3500,
-      },
-      navigation: {
-         nextEl: '.slider-electrobike__next',
-         prevEl: '.slider-electrobike__prev'
-      },
-      breakpoints: {
-         320: {
-            slidesPerView: 1,
-         },
-         450: {
-            slidesPerView: 2,
-         },
-         600: {
-            slidesPerView: 2,
-         },
-         900: {
-            slidesPerView: 3,
-         },
-         1200: {
-            slidesPerView: 4,
-         },
-      }
-   });
-   const mySwipereBike = new Swiper(n.querySelector('.swiper-container-bike'), {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 4,
-      grabCursor: true,
-      spaceBetween: 10,
-      autoplay: {
-         delay: 3500,
-      },
-      navigation: {
-         nextEl: '.slider-bike__next',
-         prevEl: '.slider-bike__prev'
-      },
-      breakpoints: {
-         320: {
-            slidesPerView: 1,
-         },
-         450: {
-            slidesPerView: 2,
-         },
-         600: {
-            slidesPerView: 2,
-         },
-         900: {
-            slidesPerView: 3,
-         },
-         1200: {
-            slidesPerView: 4,
-         },
-      }
-   });
-   const mySwiperScooter = new Swiper(n.querySelector('.swiper-container-scooter'), {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 4,
-      grabCursor: true,
-      spaceBetween: 10,
-      autoplay: {
-         delay: 3500,
-      },
-      navigation: {
-         nextEl: '.slider-scooter__next',
-         prevEl: '.slider-scooter__prev'
-      },
-      breakpoints: {
-         320: {
-            slidesPerView: 1,
-         },
-         450: {
-            slidesPerView: 2,
-         },
-         600: {
-            slidesPerView: 2,
-         },
-         900: {
-            slidesPerView: 3,
-         },
-         1200: {
-            slidesPerView: 4,
-         },
-      }
-   });
-   const mySwiperScooter2 = new Swiper(n.querySelector('.swiper-container-scooter2'), {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 4,
-      grabCursor: true,
-      spaceBetween: 10,
-      autoplay: {
-         delay: 3500,
-      },
-      navigation: {
-         nextEl: '.slider-scooter2__next',
-         prevEl: '.slider-scooter2__prev'
-      },
-      breakpoints: {
-         320: {
-            slidesPerView: 1,
-         },
-         450: {
-            slidesPerView: 2,
-         },
-         600: {
-            slidesPerView: 2,
-         },
-         900: {
-            slidesPerView: 3,
-         },
-         1200: {
-            slidesPerView: 4,
-         },
-      }
-   });
-   const mySwiperCycle = new Swiper(n.querySelector('.swiper-container-cycle'), {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 4,
-      grabCursor: true,
-      spaceBetween: 10,
-      autoplay: {
-         delay: 3500,
-      },
-      navigation: {
-         nextEl: '.slider-cycle__next',
-         prevEl: '.slider-cycle__prev'
-      },
-      breakpoints: {
-         320: {
-            slidesPerView: 1,
-         },
-         450: {
-            slidesPerView: 2,
-         },
-         600: {
-            slidesPerView: 2,
-         },
-         900: {
-            slidesPerView: 3,
-         },
-         1200: {
-            slidesPerView: 4,
-         },
-      }
-   });
-   const mySwiperOther = new Swiper(n.querySelector('.swiper-container-other'), {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 4,
-      grabCursor: true,
-      spaceBetween: 10,
-      autoplay: {
-         delay: 3500,
-      },
-      navigation: {
-         nextEl: '.slider-other__next',
-         prevEl: '.slider-other__prev'
-      },
-      breakpoints: {
-         320: {
-            slidesPerView: 1,
-         },
-         450: {
-            slidesPerView: 2,
-         },
-         600: {
-            slidesPerView: 2,
-         },
-         900: {
-            slidesPerView: 3,
-         },
-         1200: {
-            slidesPerView: 4,
-         },
-      }
-   });
    const mySwiperInformation = new Swiper(n.querySelector('.swiper-container-information'), {
       direction: 'vertical',
       initialSlide: 0,
@@ -294,10 +145,8 @@ document.querySelectorAll('.swiper').forEach(n => {
    })
 });
 
-//=============прокрутка при клике===========
-
+//scroll
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-
 if (menuLinks.length > 0) {
    menuLinks.forEach(menuLink => {
       menuLink.addEventListener("click", onMenuLinkClick)
