@@ -835,6 +835,16 @@ template {
   padding: 15px 10px;
   transition: color 0.3s ease-in-out;
 }
+@media (max-width: 640px) {
+  .viewAll a {
+    padding: 15px 40px;
+  }
+}
+@media (max-width: 450px) {
+  .viewAll a {
+    padding: 15px 10px;
+  }
+}
 
 .swiper-container-cycle > .bike__viewAll a {
   padding: 15px 20px;
