@@ -14,16 +14,16 @@ let cycleArray = ['White Siberia IKRA 5000W', 'White Siberia PRO TRIKE 3000w', '
 let cycleArrayLinks = ['82_83&product_id=138', '82_83&product_id=136', '82_83&product_id=140', '82_83&product_id=145', '82_83&product_id=143', '82_83&product_id=148', '82_83&product_id=149', '82_83&product_id=150', '82_83&product_id=144', '82_84&product_id=232', '82_84&product_id=229', '82_84&product_id=215', '82_84&product_id=213', '82_84&product_id=228', '82_84&product_id=226', '82_84&product_id=230', '82_84&product_id=231', '82_84&product_id=218', '82_84&product_id=227', '82_84&product_id=223', '82_84&product_id=219', '82_84&product_id=212', '82_84&product_id=217', '82_84&product_id=216', '82_84&product_id=225', '82_84&product_id=221', '82_84&product_id=222', '82_84&product_id=214', '82_84&product_id=211', '82_84&product_id=220', '82_84&product_id=224']
 
 let otherArray = ['Детский электроквадроцикл White Siberia WS SNEG 1500W', 'Беговел Elektra', 'Беговел-трансформер Flint', 'Гироскутер Smart Balance GT AQUA 10,5', 'Гироскутер Smart Balance Premium 10,5']
-let otherArrayLinks = ['61_75&product_id=139', '80&product_id=166', '=80&product_id=167', '78_79&product_id=151', '78_79&product_id=152']
+let otherArrayLinks = ['61_75&product_id=139', '80&product_id=166', '=80&product_id=167', '78_79&product_id=151', '78_79&product_id=154']
 
 function createProductElements(productArray, productArrayLinks, productType) {
-   const productContainer = document.querySelectorAll(`.slide__${productType}`);
+   const product = document.querySelector(`#swiper-${productType}`);
 
    for (let i = 0; i < productArray.length; i++) {
-      const product = productContainer[i];
-
-      product.setAttribute('href', `http://catalog.sportmedia.by/index.php?route=product/product&path=${productArrayLinks[i]}`);
-      product.setAttribute('target', '_blank');
+      const productItem = document.createElement('a');
+      productItem.className = 'swiper-slide swiper-slide__product';
+      productItem.setAttribute('href', `http://catalog.sportmedia.by/index.php?route=product/product&path=${productArrayLinks[i]}`);
+      productItem.setAttribute('target', '_blank');
 
       const productImgBlock = document.createElement('div');
       productImgBlock.className = `${productType}__imageBlock product__imageBlock`;
@@ -36,9 +36,10 @@ function createProductElements(productArray, productArrayLinks, productType) {
       productDescription.textContent = productArray[i];
       productDescription.className = 'description';
 
+      product.appendChild(productItem);
       productImgBlock.appendChild(productImg);
-      product.appendChild(productImgBlock);
-      product.appendChild(productDescription);
+      productItem.appendChild(productImgBlock);
+      productItem.appendChild(productDescription);
    }
 }
 
